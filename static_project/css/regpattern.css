@@ -1,0 +1,290 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0em;
+}
+h1, h2, h3, h4, h5, h6{
+  margin-bottom: 0em;
+
+}
+
+html, body, .Container, .LeftNavigation, .Content
+{
+    height: 100%;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    background:black;
+
+}
+    .Container:before
+    {
+        content: '';
+        height: 100%;
+        float: left;
+    }
+
+.HeightTaker
+{
+    position: relative;
+    z-index: 1;
+}
+
+    .HeightTaker:after
+    {
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+.Wrapper
+{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.LeftNavigation
+{
+    float: left;
+}
+.LeftNavigation, .Content
+{
+    overflow: auto;
+}
+
+.Header
+{
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+.Header .fa {
+    padding:2vh;
+    font-size:24px;
+    color: orange;
+    float: left;
+}
+
+.LeftNavigation
+{
+    width:70%;
+    background-color: white;
+    color: white;
+}
+.Content
+{
+    background-color:white;
+    text-align: left;
+}
+
+
+.profile{
+    height: 20vh;
+    width: 20%;
+    border-radius: 100px;
+    text-align: center;
+    border: black 100px;
+    background-color: white;
+
+}
+.cont{
+
+    height: 10vh;
+    width: 45vh;
+    text-align: center;
+    border-radius: 100px;
+    background-color: white;
+
+}
+.cont12{
+
+    height: 10vh;
+    width: 10vh;
+    text-align: center;
+    border-radius: 200px;
+    background-color: white;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2vh;
+  padding: 2vh;
+}
+
+.grid-container > div {
+  background-color:white;
+  border-radius: 5vh;
+  text-align: center;
+  padding: 2px;
+  font-size: 10px;
+}
+
+.grid-container1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2vh;
+  padding: 2vh;
+}
+
+.grid-container1 > div {
+  background-color:white;
+  border-radius: 3vh;
+  text-align: center;
+  border:0.3vh solid black;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.cont45{
+
+    height: 20vh;
+    width: 60vh;
+    text-align: center;
+    background-color: white;
+
+
+}
+
+.container1 > div {
+  background-color:white;
+  border-radius: 1vh;
+  text-align: center;
+  border:0.3vh solid black;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.cont1{
+
+    height: 60vh;
+    width: 80%;
+    margin-left: 10px;
+    border-radius: 0vh;
+    text-align: center;
+    background-color: white;
+}
+
+.contain1{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 1vh;
+    background-color: white;
+    border:0.3vh solid black;
+    margin-left: 115vh;
+    margin-bottom:2vh;
+}
+
+.container2 > div {
+  background-color:white;
+  border-radius: 1vh;
+  text-align: center;
+  border:0.3vh solid black;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.cont2{
+
+    height: 70vh;
+    width: 70%;
+    margin-left:60vh;
+    margin-top: 18vh;
+    border-radius: 1vh;
+    text-align: right;
+    background-color: white;
+}
+
+.contain3{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 1vh;
+    background-color: white;
+    border:0.3vh solid black;
+    margin-left:3vh;
+    margin-bottom:3vh;
+    margin-top: -2vh;
+
+}
+.contain4{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 1vh;
+    background-color: white;
+    border:0.3vh solid black;
+    margin-left:10vh;
+    margin-bottom:4vh;
+}
+.contain5{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 1vh;
+    background-color: white;
+    border:0.3vh solid black;
+    margin-left:11vh;
+    margin-bottom:4vh;
+}
+
+.contain6{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 1vh;
+    background-color: white;
+    border:0.3vh solid black;
+    margin-left:90vh;
+    margin-bottom:4vh;
+}
+.cont34 button:hover {
+  background-color:white;
+}
+
+.cont34 button{
+  background-color:blue;
+  border: 2px solid black;
+  font-size: 5px;
+  font-style:unset;
+  color: black;
+  padding: 2px;
+  cursor: pointer;
+  width: 120%;
+
+}
+
+.br1{border-radius: 30vh;
+}
+
+.conic button:hover{
+  background-color: blue;
+}
+.conic button{
+  background-color:black;
+  margin-left:21vh;
+  border: 2px solid black;
+  font-size: 5px;
+  font-style:unset;
+  cursor: pointer;
+  width: 50%;
+
+
+}
+.br2{border-radius: 0vh;
+}
+
+
+
+
+
+.scene {
+  width: 500px;
+  height: 500px;
+  border: 2px solid #CCC;
+  margin-left: 40%;
+  perspective: 500px;
+
+
+
+}
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href= "{% static '/css/minecube.css' %}">
+    <link rel="stylesheet" type="text/css" href= "{% static '/css/regpattern.css' %}">
+
+
+</head>
+
+<body>
+      <div class="Container">
+        <div class="Header">
+          <i class="fa fa-bars"></i>
+
+            <h1>SimS
+            <i class="fa fa-user" style="float: right;"></i>
+            </h1>
+
+        </div>
+        <div class="HeightTaker">
+            <div class="Wrapper">
+            	<div class="LeftNavigation">
+
+                <section class="container12">
+  <div id="cube" style="color:black">
+    <!--figure id="front">
+      <form action="/action_page.php">
+  <label for="fname">First name: <input type="text" id="fname" name="fname" value="John"></label><br>
+ <br>
+  <label for="lname">Last name: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ <label for="lname">E-mail: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ <label for="lname">Location: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ </form>
+ <button id="right-button">NEXT</button>
+     </figure-->
+
+     <figure id="front">
+      <form method="POST">
+          {% csrf_token %}
+     <div style="position: absolute;">
+                          <h1 style="font-size: 40px;margin-left:50px;text-align: center;">Registration From</h1>
+
+                  <div style="margin:0;margin-left:30px;"><label style="font-size: 25px;">FirstName:<input type="text" name="firstname" style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;">LastName:<input type="text" name="lastname"  style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;padding:0">E-mail:<input type="email" name="email" style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;padding:0">Location:<input type="text" name="location" style="width:200px;height:30px;margin:10px;"required></label></div>
+              </from>
+                    <button style="left:80%;border-radius:10px;height:50px;position: inline-start;position: absolute;" id="right-button" ><h3 style="font-size:20px;" >NEXT</h3></button><br></div></figure>
+
+
+
+    <!--figure id="right">
+      <form action="/action_page.php">
+  <label for="fname">gender: <input type="text" id="fname" name="fname" value="John"></label><br>
+ <br>
+  <label for="lname">profession: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ <label for="lname">DOB: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ <label for="lname">ph-num: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ </form><button id="front-button">PREV</button><button id="back-button">NEXT</button>
+ </figure-->
+ <figure id="right">
+      <form method="POST">
+          {% csrf_token %}
+         <div style="position: absolute;">
+                  <div style="margin:0;margin-left:30px;"><label style="font-size: 25px;">Gender:<input type="text" name="gender" style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;">Profession:<input type="text" name="profession"  style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;padding:0">DOB:<input type="text" name="dob" style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;padding:0">Cont-Num:<input type="tel" name="number" style="width:200px;height:30px;margin:10px;"required></label></div>
+                </form>
+                  <button style="border-radius:10px;left:10%;height:50px;border:1;position:absolute;" id="front-button"><h3 style="font-size: 20px;">PREV</h3></button>
+          <button style="left:100%;border-radius:10px;height:50px;position: inline-start;position: absolute;" id="back-button"><h3 style="font-size:20px;">NEXT</h3></button><br></figure>
+
+    <!--figure id="back">
+       <form action="/action_page.php">
+  <label for="fname">user name: <input type="text" id="fname" name="fname" value="John" required=""></label><br>
+ <br>
+  <label for="lname">password: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ <label for="lname">con-pass: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ <label for="lname">OTP: <input type="text" id="lname" name="lname" value="Doe"></label><br>
+ <br><br>
+ </form>
+      <button id="right-button1">PREV</button><input  type="submit" value="Submit" id="left-button">
+    </figure-->
+
+    <figure id="back">
+       <form method="POST">
+           {% csrf_token %}
+<div style="margin:0;margin-left:30px;"><label style="font-size: 25px;">UserName:<input type="text" name="username" style="width:200px;height:30px;margin:10px;"required></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;">Password:<input type="password" name="password"   style="width:200px;height:30px;margin:10px;"required onchange="form.repwd.pattern=this.value"></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;padding:0">Con-Pass:<input type="password" name="repwd" style="width:200px;height:30px;margin:10px;"required pattern=""></label></div>
+                  <div style="margin:0"><label style="font-size: 25px;padding:0">otp:<input type="number"style="width:200px;height:30px;margin:10px;"required></label></div>
+                </form>
+                  <button style="border-radius:10px;left:10%;height:50px;border:1;position:absolute;" id="right-button1"><h3 style="font-size: 20px;">PREV</h3></button>
+          <button style="left:80%;border-radius:10px;height:50px;position: inline-start;position: absolute;" id="left-button"><h3 style="font-size:20px;">Submit</h3></button><br>
+
+ </figure>
+
+    <figure id="left"><p style="font-size:30px;">welcome to sims</p></figure>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+</div>
+                <div class="Content">
+                   <div class="grid-container">
+                     <div class="cont34">
+                      <input type="text"  style="width:200px;height:30px;margin:10px;" placeholder="USERNAME" required>
+                            <br>
+                            <input type="text"  style="width:200px;height:30px;margin:10px;" placeholder="PASSWORD" required>
+
+                      </div>
+
+                   </div>
+                  <hr>
+                  <div>
+                          <button style="font-size:20px;left:80%;position: inline-start;position: absolute;width:400px;">LOGIN</button>
+                  </div>
+
+
+
+                     <br>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+      <script>
+  document.getElementById("front-button").addEventListener("click", showFront);
+
+function showFront() {
+    document.getElementById("cube").className = "show-front";
+    }
+
+
+document.getElementById("right-button").addEventListener("click", showRight);
+
+function showRight() {
+    document.getElementById("cube").className = "show-right";
+    }
+    document.getElementById("right-button1").addEventListener("click", showRight);
+
+function showRight() {
+    document.getElementById("cube").className = "show-right";
+    }
+document.getElementById("back-button").addEventListener("click", showBack);
+
+function showBack() {
+    document.getElementById("cube").className = "show-back";
+    }
+
+document.getElementById("left-button").addEventListener("click", showLeft);
+
+function showLeft() {
+    document.getElementById("cube").className = "show-left";
+    }
+
+
+</script>
+
+
+</body>
+</html>

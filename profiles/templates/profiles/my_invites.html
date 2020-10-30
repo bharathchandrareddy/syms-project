@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}
+Profile Invites
+{% endblock title %}
+
+{% block content %}
+    {% if is_empty %}
+        <h1>You don't have any invitations</h1>
+    {% endif %}
+
+    {% for item in qs %}
+        <div class="ui segment">
+            <div class="ui grid">
+                <div class="three wide column">
+                    <img src="{{item.avatar.url}}" class="ui small circular image" alt="avatar">
+                </div>
+                <div class="thirteen wide column">
+                    <h3>{{item.user}}</h3>
+                    <h2>{{item.bio}}</h2>
+                    <br>
+                    <a href="">
+                        <button class="ui primary button w-big mb-5">  see profile</button>
+                    </a>
+                    <form action="{% url 'profiles:accept-invite' %}" method="POST">
+
+                        {% csrf_token %}
+                        <input type="hidden" name="profile_pk" value={{item.pk}}>
+
+                            <button type="submit" class="ui positive basic button w-big mb-5"><i class="plus square icon"></i>Accept request</button>
+
+                    </form>
+                    <form action="{% url 'profiles:reject-invite' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="profile_pk" value={{item.pk}}>
+
+                            <button type="submit" class="ui negative basic button w-big mb-5"><i class="close icon"></i>Reject request</button>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

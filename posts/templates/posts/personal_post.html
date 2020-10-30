@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}
+home
+{% endblock title %}
+{% block content %}
+<div class="ui-grid">
+    <row>
+    <div class="row">
+        <div class="seven wide column">
+            {% for post in posts %}
+                <div class="ui fluid card">
+                    <h3>{{post.author.user}}</h3>
+                    <div class="row">
+                        {% ifequal request.user post.author.user %}
+                            <a href="{% url 'posts:post-update' post.pk %}"><button class="ui button bwhite-lg">Update</button></a>
+                            <a href="{% url 'posts:post-delete' post.pk %}"><button class="ui button bwhite-lg">Delete</button></a>
+                        {% endifequal %}
+                    </div>
+                    <div class="content">
+
+                        {{post.content}}
+                    </div>
+                    <div class="content">
+                        <form action="{% url 'posts:main-like-view' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="post_id" value={{post.id}}>
+
+                            {% if profile not in post.liked.all %}
+                            <button type="submit" class="ui button positive">Like </button>&nbsp;{{post.num_likes}}
+                            {% else %}
+                            <button type="submit" class="ui button negative">Unlike </button>&nbsp;{{post.num_likes}}
+                            {% endif %}
+                        </form>
+                        <div>
+                        {% if post.comment_set.all %}
+                            {% for comment in post.comment_set.all %}
+                                <p>{{comment.body}}</p>
+                            {% endfor %}
+                        {% endif %}
+                        </div>
+
+
+
+
+                        <form action="" method="POST" class="ui form">
+                            {% csrf_token %}
+                            <input type="hidden" name="post_id" value={{post.id}}>
+                            {{c_form}}
+                            <button type="submit" class="ui primary button" name="submit_c_form">Comment</button>
+                        </form>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+        <div class="five wide column">
+            {% if post_added %}
+                <div class="ui green messege">Post added successfully</div>
+            {% endif %}
+            <form action="" method="POST" class="ui form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{p_form}}
+                <button type="submit" class="ui button positive" name="submit_p_form">Share post</button>
+            </form>
+
+        </div>
+    </div>
+    </row>
+
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+    console.log('working')
+})
+</script>
+{% endblock scripts %}
+
+

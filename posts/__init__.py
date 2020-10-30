@@ -1,0 +1,1 @@
+default_app_config = 'posts.apps.PostsConfig'  # this code written to create an order in admin site
